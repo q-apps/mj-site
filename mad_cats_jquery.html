@@ -1,0 +1,31 @@
+ http://aws.random.cat/meow
+ <html>
+
+ <head>
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+     <script>
+
+         function catLoader () {
+         $.get("http://aws.random.cat/meow").done(
+
+         function(data) {
+
+         $("#cat").append("   <img width=800 src='" + data.file  +  "'>   ")
+
+
+         }
+
+         )
+
+         }
+
+     </script>
+ </head>
+ <body>
+ <div id="cat">
+
+ </div>
+ <button onclick="catLoader()">I want a new cat!</button>
+
+ </body>
