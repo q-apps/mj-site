@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+    .cat {
+      border:1px solid black;
+      width:100px;
+      height:100px;
+      position: absolute;
+    }
+    </style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+      var i = 0;
+      function printCat () {
+        i = i + 1;
+        //console.log(i)
+
+        var gameDiv = $("<div>", {
+          "class" : "cat",
+          "id" : "test_" + i,
+          "style" : "margin-top: " + getRandomInt(0, 500) + "px; margin-left: " + getRandomInt(0, 800) + "px;"
+        }).html(i).click(function(){
+          $(this).remove()
+
+        })
+
+        $("body").append(gameDiv)
+
+
+        setTimeout(printCat, 50)
+      }
+      printCat()
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+  })
+</script>
+  </head>
+  <body>
+
+  </body>
+</html>
